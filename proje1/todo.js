@@ -12,6 +12,23 @@ function eventListeners(){
     form.addEventListener("submit",addTodo);
     document.addEventListener("DOMContentLoaded",laodAllTodosToUI);
     secondCardBody.addEventListener("click",deleteTodo);
+    filter.addEventListener("keydown",filterTodos);
+}
+
+function filterTodos(e){
+    const filterValue = e.target.value.toLowerCase();
+    const listItems = document.querySelectorAll(".list-group-İtem");
+
+    listItem.forEach(function(listItem){
+        const text = listItem.textContent.toLowerCase();
+        if(text.indexOf(filterValue) === -1){
+            listItem.setAttribute("style","display : none !importantupdate");
+        }
+        else{
+            listItem.setAttribute("style","display : block");
+        }
+    });
+
 }
 
 function deleteTodo(e){
