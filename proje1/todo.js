@@ -20,11 +20,33 @@ if(newTodo === ""){
 }
 else{
     addTodoToUI(newTodo);
+    addTodoToStorage(newTodo);
     showAlert("success","Todo başarılı bir şekilde eklendi");
 }
 
 e.preventDefault();
 
+}
+
+//Storagedan bütün todoarı alacak
+function getTodosFromStorage(){
+    let todos;
+
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }
+    else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    return todos;
+}
+
+function addTodoToStorage(newTodo){
+    let todos = getTodosFromStorage();
+
+    todos.push(newTodo);
+
+    localStorage.setItem("todos",JSON.stringify(todos));
 }
 
 function showAlert(type,message){
