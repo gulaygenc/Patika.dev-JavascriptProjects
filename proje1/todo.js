@@ -22,7 +22,7 @@ function filterTodos(e){
     listItem.forEach(function(listItem){
         const text = listItem.textContent.toLowerCase();
         if(text.indexOf(filterValue) === -1){
-            listItem.setAttribute("style","display : none !importantupdate");
+            listItem.setAttribute("style","display : none !important");
         }
         else{
             listItem.setAttribute("style","display : block");
