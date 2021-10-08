@@ -12,6 +12,16 @@ function eventListeners(){
     form.addEventListener("submit",addTodo);
     document.addEventListener("DOMContentLoaded",laodAllTodosToUI);
 }
+
+functiondeleteTodo(e){
+    if(e.target.className === "fa fa-remove"){
+        e.target.parentElement.parentElement.remove();
+        showAlert("success","Tdoo başarılı bir şekilde silindi");
+    }
+
+
+}
+
 function laodAllTodosToUI(){
     let todos = getTodosFromStorage();
 
