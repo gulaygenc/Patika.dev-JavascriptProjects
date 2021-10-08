@@ -17,9 +17,9 @@ function eventListeners(){
 
 function filterTodos(e){
     const filterValue = e.target.value.toLowerCase();
-    const listItems = document.querySelectorAll(".list-group-İtem");
+    const listItems = document.querySelectorAll(".list-group-item");
 
-    listItem.forEach(function(listItem){
+    listItems.forEach(function(listItem){
         const text = listItem.textContent.toLowerCase();
         if(text.indexOf(filterValue) === -1){
             listItem.setAttribute("style","display : none !important");
