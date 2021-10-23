@@ -16,6 +16,20 @@ function eventListeners(){
     clearButton.addEventListener("click",clearAllTodos);
 }
 
+function addTodo(e){
+    const newTodo = todoInput.value.trim();
+    
+    if(newTodo === ""){
+        showAlert("danger","Lütfen bir todo girin");
+    }
+    else{
+        addTodoToUI(newTodo);
+        addTodoToStorage(newTodo);
+        showAlert("success","Todo başarılı bir şekilde eklendi");
+    }   
+    e.preventDefault();    
+    }
+
 function clearAllTodos(e){
     if(confirm("Tümünü silmek istediğinize emin misiniz?")){
         while(todoList.firstElementChild != null){
@@ -68,22 +82,6 @@ function laodAllTodosToUI(){
     todos.forEach(function(todo){
         addTodoToUI(todo);
     })
-
-}
-
-function addTodo(e){
-const newTodo = todoInput.value.trim();
-
-if(newTodo === ""){
-    showAlert("danger","Lütfen bir todo girin");
-}
-else{
-    addTodoToUI(newTodo);
-    addTodoToStorage(newTodo);
-    showAlert("success","Todo başarılı bir şekilde eklendi");
-}
-
-e.preventDefault();
 
 }
 
