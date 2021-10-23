@@ -1,1 +1,2 @@
-# HTML-CSS-Projects
+# Javascript Projects
+Contains simple javascript projects for beginner
