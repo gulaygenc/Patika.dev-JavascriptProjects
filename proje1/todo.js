@@ -28,7 +28,7 @@ function addTodo(e){
         showAlert("success","Todo başarılı bir şekilde eklendi");
     }   
     e.preventDefault();    
-    }
+}
 
 function clearAllTodos(e){
     if(confirm("Tümünü silmek istediğinize emin misiniz?")){
