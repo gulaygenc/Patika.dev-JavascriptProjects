@@ -121,22 +121,17 @@ function showAlert(type,message){
 
 //String değerini list item olarak ekler
 function addTodoToUI(newTodo){
-
     //List Item Oluşutrma
     const listItem = document.createElement("li");
-
     //Link Oluşutrma
     const link = document.createElement("a");
-
     link.href = "#";
     link.className = "delete-item";
     link.innerHTML = "<i class = 'fa fa-remove'></i>"
     listItem.className = "list-group-item d-flex justify-content-between";
-
     //Text Node Ekleme
     listItem.appendChild(document.createTextNode(newTodo));
     listItem.appendChild(link);
-
     //Todo List'e List Item ekleme
     todoList.appendChild(listItem);
     todoInput.value = "";
